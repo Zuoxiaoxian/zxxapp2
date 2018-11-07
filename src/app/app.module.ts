@@ -7,13 +7,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+// 导入组件
+import { HomeListPageModule } from "../pages/home-list/home-list.module";
+import { ListDetailPageModule } from "../pages/list-detail/list-detail.module";
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    
   ],
   imports: [
     BrowserModule,
+    // 导入组件
+    HomeListPageModule,
+    ListDetailPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

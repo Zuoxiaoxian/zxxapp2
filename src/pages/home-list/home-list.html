@@ -8,6 +8,14 @@
 
   <ion-navbar>
     <ion-title>228列表页</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="presentPopover($event)">
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+
+        <!-- Advanced: explicity set the icon for each platform -->
+        <!-- <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon> -->
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,40 +23,14 @@
 
 <ion-content padding>
 <!-- <button (click)='goto()'>详情页</button> -->
-<table>
-  <tr>
-    <td>杨一</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-  <tr>
-    <td>李二</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-  <tr>
-    <td>庞三</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-  <tr>
-    <td>左大大</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-  <tr>
-    <td>张五</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-<tr>
-    <td>梁六</td>
-    <td>信息</td>
-    <td>图</td>
-  </tr>
-</table>
 
-
+<ion-grid>
+  <ion-row *ngFor='let item of listmessages' align-items-center (click)='goto()'>
+    <ion-col>{{item.name}}</ion-col>
+    <ion-col>{{item.message}}</ion-col>
+    <ion-col><img src="{{item.img}}" alt=""></ion-col>
+  </ion-row>
+</ion-grid>
 
 
 

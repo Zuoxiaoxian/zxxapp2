@@ -8,6 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+
+//  资源
+import {LISTMESSAGE} from "../../app/provider/list-messages";
+
 @IonicPage()
 @Component({
   selector: 'page-list-detail',
@@ -15,11 +19,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public listmessage:LISTMESSAGE) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListDetailPage');
+    
   }
-
+  get_data: any = this.listmessage.get_data;
+  post_data:any = this.listmessage.post_data;
 }

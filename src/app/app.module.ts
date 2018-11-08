@@ -10,6 +10,13 @@ import { HomePage } from '../pages/home/home';
 // 导入组件
 import { HomeListPageModule } from "../pages/home-list/home-list.module";
 import { ListDetailPageModule } from "../pages/list-detail/list-detail.module";
+import {ListPopoverctrlPageModule} from "../pages/list-popoverctrl/list-popoverctrl.module";
+// 导入资源
+import {LISTMESSAGE} from "./provider/list-messages";
+
+//http
+import {HttpService} from "../app/provider/httpservice";
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     MyApp,
@@ -21,6 +28,9 @@ import { ListDetailPageModule } from "../pages/list-detail/list-detail.module";
     // 导入组件
     HomeListPageModule,
     ListDetailPageModule,
+    ListPopoverctrlPageModule,
+    // http
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -31,6 +41,10 @@ import { ListDetailPageModule } from "../pages/list-detail/list-detail.module";
   providers: [
     StatusBar,
     SplashScreen,
+    // 声明导入的资源
+    LISTMESSAGE,
+    // http
+    HttpService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
